@@ -1,11 +1,9 @@
-<div class= "form-inline">
+<div class="form-inline">
   <h4>
     ProAgil Eventos!
   </h4>
   <div class="form-group mb-2">
-      <label class="mr-2">Filtro:</label> <input type="text"
-      class="form-control mr-2"
-      placeholder="buscar"
+    <label class="mr-2">Filtro:</label> <input type="text" class="form-control mr-2" placeholder="buscar"
       [(ngModel)]="filtroLista">
   </div>
 </div>
@@ -14,8 +12,7 @@
   <thead class="thead-dark">
     <tr>
       <th>
-        <button class="btn btn-outline-primary"
-          (click)="alternarImagem()">
+        <button class="btn btn-outline-primary" (click)="alternarImagem()">
           Mostrar Imagem
         </button>
       </th>
@@ -31,9 +28,7 @@
   <tbody *ngIf="eventos && eventos.length">
     <tr *ngFor="let evento of eventosFiltrados">
       <td>
-        <img *ngIf="mostrarImagem"
-          src="http://localhost:5000/img/{{evento.imagemURL}}"
-          [style.width.px]="imagemLargura"
+        <img *ngIf="mostrarImagem" src="http://localhost:5000/img/{{evento.imagemURL}}" [style.width.px]="imagemLargura"
           [style.margin.px]="imagemMargem">
 
       </td>
