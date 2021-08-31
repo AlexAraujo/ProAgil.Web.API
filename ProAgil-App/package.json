@@ -1,6 +1,6 @@
 {
   "name": "pro-agil-app",
-  "version": "0.0.0",
+  "version": "12.1.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
