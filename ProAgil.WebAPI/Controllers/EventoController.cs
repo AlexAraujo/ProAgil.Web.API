@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ProAgil.Domain;
-using ProAgil.Repository;
+using ProAgil.WebAPI.Data;
+using ProAgil.WebAPI.Model;
 
 namespace ProAgil.WebAPI.Controllers
 {
@@ -20,7 +20,7 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                var results = await _repo.GetAllEventosAsync(true);
+                var results = await _repo.GetAllEventosAsync();
                 return Ok(results);
             }
             catch (System.Exception)
@@ -34,7 +34,7 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                var results = await _repo.GetEventosAsyncById(EventoId, true);
+                var results = await _repo.GetEventosAsyncById(EventoId);
                 return Ok(results);
             }
             catch (System.Exception)
@@ -48,7 +48,7 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                var results = await _repo.GetAllEventosAsyncByTema(tema, true);
+                var results = await _repo.GetAllEventosAsyncByTema(tema);
                 return Ok(results);
             }
             catch (System.Exception)
@@ -82,7 +82,7 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                var evento = await _repo.GetEventosAsyncById(EventoId, false);
+                var evento = await _repo.GetEventosAsyncById(EventoId);
                 if (evento == null) return NotFound();
 
                 _repo.Update(model);
@@ -105,7 +105,7 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                var evento = await _repo.GetEventosAsyncById(EventoId, false);
+                var evento = await _repo.GetEventosAsyncById(EventoId);
                 if (evento == null) return NotFound();
 
                 _repo.Delete(evento);
